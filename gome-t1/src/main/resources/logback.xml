@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<configuration debug="false">
+   <property name="BASE_LOG_PATH" value="/home/wangzhen-ds5/${projectName}" />
+  <!-- info -->
+	<appender name="info_file" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<File>${BASE_LOG_PATH}/info/info.log</File>
+		<encoder>
+			<pattern>%d{HHHH-MM-dd HH:mm:ss.SSS} | %p| %m%n%rEx</pattern>
+		</encoder>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>${BASE_LOG_PATH}/info/info.log.%d{yyyy-MM-dd}</fileNamePattern>
+		</rollingPolicy>
+	</appender>
+	<logger name="info_log" level="INFO" additivity="false">
+		<appender-ref ref="info_file"/>
+	</logger>
+	<!-- error -->
+	<appender name="error_file" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<File>${BASE_LOG_PATH}/error/error.log</File>
+		<encoder>
+			<pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} | %p| %m%n%rEx</pattern>
+		</encoder>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>${BASE_LOG_PATH}/error/error.log.%d{yyyy-MM-dd}</fileNamePattern>
+		</rollingPolicy>
+	</appender>
+	<logger name="error_log" level="ERROR" additivity="false">
+		<appender-ref ref="error_file"/>
+	</logger>
+	
+	<!-- Console -->
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">   
+	    <!-- encoder 默认配置为PatternLayoutEncoder -->   
+	    <encoder>   
+	      <pattern>%d{HHHH-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>   
+	    </encoder>   
+	 </appender>
+	
+	<root level="INFO">
+		<appender-ref ref="info_file" />
+		<appender-ref ref="STDOUT" />
+	</root>
+   
+</configuration>
+
+
