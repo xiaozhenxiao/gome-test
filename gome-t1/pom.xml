@@ -105,7 +105,7 @@
         <!-- rocketmq end -->
         
         <!-- tbschedule -->
-        <dependency>
+        <!-- <dependency>
 			<groupId>com.taobao.pamirs.schedule</groupId>
 			<artifactId>tbschedule</artifactId>
 			<version>3.2.18</version>
@@ -115,7 +115,7 @@
                     <artifactId>spring</artifactId>
                 </exclusion>
             </exclusions>
-		</dependency>
+		</dependency>-->
 		<dependency>
 			<groupId>com.google.code.gson</groupId>
 			<artifactId>gson</artifactId>
@@ -263,8 +263,8 @@
 			<artifactId>commons-collections4</artifactId>
 			<version>4.0</version>
 		</dependency>
-		
-		<dependency>
+
+		<!--<dependency>
 			<groupId>com.taobao.tddl</groupId>
 			<artifactId>tddl-group-datasource</artifactId>
 			<version>3.0.1.5.taobaocode-SNAPSHOT</version>
@@ -273,7 +273,7 @@
 			<groupId>com.taobao.tddl</groupId>
 			<artifactId>tddl-atom-datasource</artifactId>
 			<version>3.0.1.5.taobaocode-SNAPSHOT</version>
-		</dependency>
+		</dependency>-->
 		
 		<!-- HBase and Hadoop dependencies -->
 	    <dependency>
@@ -1160,8 +1160,6 @@
 			<artifactId>curator-client</artifactId>
 			<version>3.0.0</version>
 		</dependency>
-		
-				
 	</dependencies>
 	<build>
 		<finalName>gome-t1</finalName>
